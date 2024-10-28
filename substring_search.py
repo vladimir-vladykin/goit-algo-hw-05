@@ -25,7 +25,7 @@ def main():
     for text_index, text in enumerate(texts):
         print(f"Testing text {text_index + 1}....")
         for target in test_subscrings:
-            print(f"Testing by subscring \'{target}\'....")
+            print(f"Testing by substring \'{target}\'....")
 
             for algo, tag in algorithms:
                 result = measure_time(algo, text, target)

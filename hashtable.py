@@ -36,9 +36,10 @@ class HashTable:
     def insert(self, key, value):
         key_hash = self.hash_function(key)
         key_value = [key, value]
-
-        if self.table[key_hash] is None:
-            self.table[key_hash] = list([key_value])
+    
+        if len(self.table[key_hash]) == 0:
+            # first value by this hash            
+            self.table[key_hash].append(key_value)
             return True
         else:
             for pair in self.table[key_hash]:
